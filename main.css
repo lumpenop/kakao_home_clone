@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+.header{
+    background: black;
+    display: block;
+    position: fixed;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+.container{
+    width: 1300px;
+    margin: 0 auto;
+
+}
+
+.list_lang{
+    margin-left: 50px;
+    font-size: 14px;
+}
+
+.title_logo{
+    float: left;
+}
+
+.title_logo span{
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.gnb ul{
+    float: left;
+    display: flex;
+}
+
+.gnb ul{
+    position: relative;
+    left: 50%;
+    transform: translateX(-64%);
+}
+
+.gnb a{
+    padding: 16px 8px;
+    line-height: 40px;
+}
+
+.video{
+    padding-top: 42px;
+}
+
+video{
+    width: 100%;
+    display: block;
+}
+
+.content{
+    position: absolute;
+    top: 200px;
+    left: 135px;
+    font-size: 40px;
+    color: aliceblue;
+    font-weight: bold;
+    letter-spacing: -0.1em;
+}
+
+/*** header end ***/
+
+.card_list{
+    padding: 85px 80px;
+}
+
+.card_body{
+    background: lightslategray;
+    border-radius: 20px;
+    padding: 52px;
+}
+
+.subject{
+    position: relative;
+    color: white;
+    font-size: 40px;
+    letter-spacing: -0.1em;
+    
+    
+}
+
+.last_card{
+    margin-top: 100px;
+   
+}
+
+
+.last_card img{
+    margin-left: auto;
+    display: inline-block;
+    position: relative;
+    left: 280px;
+}
+
+
+.arr{
+    margin: 20px 0 40px 0;
+    display: inline-block;
+    color: white;
+}
