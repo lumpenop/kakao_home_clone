@@ -15,11 +15,14 @@ a{
 }
 
 .header{
-    background: black;
+    background: white;
     display: block;
     position: fixed;
     width: 100%;
     z-index: 1;
+    background: black;
+    height: 61px;
+    overflow: hidden;
 }
 
 .container{
@@ -34,14 +37,21 @@ a{
     font-size: 14px;
 }
 
+.list_lang a{
+    display: block;
+    height: 61px;
+    line-height: 61px;
+}
+
 .title_logo{
     float: left;
+    height: 61px;
 }
 
 .title_logo span{
     font-weight: 500;
     font-size: 28px;
-    padding: 12px 0;
+    line-height: 61px;
     display: block;
 }
 
@@ -320,6 +330,7 @@ video{
 
 .header_container{
     width: 100% !important;
+    display: block;
 }
 
 .gnb_wrap{
