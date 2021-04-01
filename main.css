@@ -20,7 +20,6 @@ a{
     position: fixed;
     width: 100%;
     z-index: 1;
-    background: black;
     height: 61px;
     overflow: hidden;
 }
