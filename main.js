@@ -10,46 +10,52 @@ document.addEventListener('scroll', function() {
 
       if(beforePosition < afterPosition ){
         document.querySelector(".header").style.background='black';
-        document.querySelector(".header").style.border='none';
-        document.querySelector(".title_logo span").style.color='white';
         
+        document.querySelector(".title_logo span").style.color='white';
+        document.querySelector(".header").style.zIndex = 0;
+
       } else {
         document.querySelector(".header").style.background='white';
         document.querySelector(".title_logo span").style.color='black';
+        document.querySelector(".header").style.zIndex = 1;
       }
 
     } else {
   
       document.querySelector(".header").style.background='white';
       document.querySelector(".title_logo span").style.color='black';
+      
+      document.querySelector(".header").style.zIndex = 1;
   
     }
     beforePosition = afterPosition;
 });
 
 
-// 600px 보다 크면 matches 가 false, 크면 true 가 되는 미디어 쿼리 리스트 생성
 
-
-// document 가 미디어 쿼리를 충족시키는것에 대해 변화가 생기면 콘솔에 로깅한다
 const changeHandler = () => {
   console.log(window.innerHeight);
   document.querySelector(".video > video").style.height=String(window.innerHeight)+"px";
 };
 
-// 600px 을 기준으로 document width 가 바뀔 때 마다 이벤트 핸들러를 호출한다
 window.addEventListener("resize", changeHandler);
 
 
 
+beforeIndex = 0;
 
 navOn = (index) => {
+
+  if(index==undefined){
+    index=beforeIndex;
+  } 
+
   li = document.querySelectorAll('.main_nav > li');
   console.log(index)
 
   sub = document.querySelectorAll('.sub_wrap > ul');
   for(i=0; i>sub.length; i++){
-    sub[i].className = 'gnb_sub'
+    sub[i].className = 'gnb_sub';
   }
   sub[index].className = "gnb_sub onNum";
 
@@ -62,13 +68,40 @@ navOn = (index) => {
 
   nav = document.querySelector('.gnb_sub_wrap');
   nav.className = 'gnb_sub_wrap on';
+
+  beforeIndex = index;
+
 }
 
 navOff = (index) => {
-  nav = document.querySelector('.gnb_sub_wrap');
-  nav.className = 'gnb_sub_wrap off';
+  if(index==undefined){
+    index=beforeIndex;
+  } 
 
   sub = document.querySelectorAll('.sub_wrap > ul');
   sub[index].className = "gnb_sub";
- 
+
+  nav = document.querySelector('.gnb_sub_wrap');
+  nav.className = 'gnb_sub_wrap off';
+
+  beforeIndex = index;
 }
+
+const options = {
+  threshold : [0, 0.5, 1]
+}
+
+const io = new IntersectionObserver((entries, observer)=>{
+  entries.forEach(entry => {
+     
+    if (entry.intersectionRatio >= 1){
+          entry.target.play();
+    } else if (entry.intersectionRatio >0.3) {
+        entry.target.pause();
+       
+    }
+    });},options);
+
+box = document.querySelector('.card_body > div > div > video');
+io.observe(box);
+
