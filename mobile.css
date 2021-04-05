@@ -1,0 +1,55 @@
+@media screen and (max-width: 769px){
+    #header{
+        height: 62px;
+        display: block;
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .main_nav{
+        display: none !important;
+    }
+
+    .list_lang{
+        display: none !important;
+    }
+
+    .content, .subject{
+        font-size: 30px;
+    }
+
+    .title_logo{
+        position: relative;
+        left: 5%;
+    
+    }
+
+    .summary_info, .service_info{
+        width: 100%;
+        margin-top: 60px;
+    }
+
+    .card_list{
+        padding: 60px 80px 0;
+    }
+
+    .card_body{
+        height: 360px;
+    }
+    
+    .side_area{
+        right: 10% !important;
+        display: block;
+    }
+
+    .side_bar{
+        display: block;
+    }
+
+    #side_flag:checked + label > span{
+        background: white;
+    }
+
+  
+}

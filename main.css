@@ -15,12 +15,10 @@ a{
 }
 
 .header{
-
     display: block;
     position: fixed;
     width: 100%;
-    z-index: 1;
-
+    z-index: 9999;
 }
 
 .container{
@@ -33,6 +31,12 @@ a{
     float: right;
     margin-left: 50px;
     font-size: 14px;
+}
+
+.list_lang a{
+    height: 62px;
+    line-height: 62px;
+    padding: 0 6px;
 }
 
 .title_logo{
@@ -59,8 +63,8 @@ a{
 
 .main_nav{
     position: relative;
-    left: 50%;
-    transform: translateX(-64%);
+    left: calc(45% - 40rem);
+    transform: translateX(calc(-50% + 40rem));
 }
 
 .main_nav a{
@@ -80,7 +84,7 @@ a{
 
 
 .video{
-    padding-top: 42px;
+    padding-top: 62px;
     overflow: hidden;
 }
 
@@ -100,14 +104,10 @@ video{
     color: aliceblue;
     font-weight: bold;
     letter-spacing: -0.1em;
-    opacity: .99;
+    z-index: 1;
 }
 
 
-.content p {
-
-    opacity: .99;
-}
 
 /***** header end *****/
 
@@ -117,6 +117,7 @@ video{
 
 .card_body{
     background: lightslategray;
+    height: 687.25px;
     border-radius: 20px;
     padding: 52px;
 }
@@ -126,21 +127,25 @@ video{
     color: white;
     font-size: 40px;
     letter-spacing: -0.1em;
-    
+    z-index: 1;
     
 }
 
 .last_card{
     margin-top: 100px;
-   
 }
 
 
 .last_card img{
+    width: 72%;
+    height: auto;
     margin-left: auto;
     display: inline-block;
     position: relative;
-    left: 280px;
+    bottom: 8%;
+    left: 100%;
+    transform: translateX(-100%);
+    z-index: 1;
 }
 
 
@@ -182,7 +187,7 @@ video{
 }
 
 .main_service{
-
+    width: 100%;
     padding: 76px 60px 0;
 }
 
@@ -193,7 +198,7 @@ video{
 }
 
 .service_info{
-    width: 33%;
+    width: 32%;
     display: inline-block;
     padding: 0 20px;
     position: relative;
@@ -237,9 +242,6 @@ video{
     border-top: 2px solid #aaa;
 }
 
-.info_copyright{
-    display: flex;
-}
 
 .relation{
     float: right;
@@ -339,3 +341,177 @@ video{
 .show > video{
     display: block !important;
 }
+
+
+/**** side area ****/
+.side_area{
+    z-index: 9999;
+    position: fixed;
+    right: 5%;
+    display: none;
+    transform: translateY(-50%);
+}
+
+.side_area > input{
+  display: none;
+}
+
+.side_area label{
+    top: -40px;
+    position: fixed;
+    width: 30px;
+    height: 20px;
+    z-index: 9999 !important;
+}
+.side_area span{
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 6px;
+    transition: all .14s;
+}
+
+.side_area span:first-child{
+    top: 0%;
+}
+
+.side_area span:nth-child(2){
+   top: 50%;
+}
+
+.side_area span:last-child{
+    top: 100%;
+}
+
+
+#side_flag:checked + label span:first-child{
+    top: 60%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+#side_flag:checked + label span:nth-child(2){
+    opacity: 0;
+}
+
+#side_flag:checked + label span:last-child{
+    top: 45%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+
+.side_bar{
+    display: none;
+    height: 2000px;
+    z-index: 9999;
+    background: black;
+
+    position: fixed;
+    width: 200px;
+    top: 20%;
+    right: -320px;
+  
+}
+
+.side_bar a{
+    color: white;
+}
+
+.side_bar li{
+    text-align: center;
+    padding: 6px 0;
+}
+
+.side_bar a{
+    padding: 6px 16px;
+    display: inline-block;
+}
+
+#side_flag:checked+label+.side_bar{
+    z-index: 9999;
+    width: 110vw;
+    height: 100vh;
+    right: -100px;
+  
+}
+
+/***** copyright *****/
+
+.info_copyright li{
+    padding: 0 6px;
+}
+
+.ico_corp{
+    background: url(
+        https://t1.kakaocdn.net/kakaocorp/pw/ico_corp_181031.png) no-repeat;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top;
+    width: 13px;
+    height: 9px;
+    margin: 9px 0 0 6px;
+    background-position: -272px -25px;
+    
+
+}
+
+.info_copyright > li:hover .ico_corp{
+    background-position: -282px -25px;
+}
+
+.info_copyright a{
+    color: gray;
+}
+
+.info_copyright > li:hover > a{
+    color: black;
+}
+
+.info_copyright strong{
+    color: black;
+}
+
+.list_relation > li:hover > a{
+    color: gray;
+    border-bottom: 1px solid black;
+}
+
+.info_copyright > li{
+  position: relative;
+}
+
+.list_relation {
+    display: none;
+    position: absolute;
+    bottom: 29px;
+    left: 0;
+}
+
+.relation_on{
+    display: block;
+    width: 160px;
+    bottom: 29px;
+    left: 0;
+    border: 1px solid #ececec;
+    background: white;
+}
+
+.relation_on li:hover a{
+    border-bottom: 1px solid black;
+}
+
+.info_copyright{
+    display: flex;
+    position: relative;
+}
+
+
+.text_copyright{
+    display: block;
+}
+
+
+
