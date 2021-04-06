@@ -149,9 +149,11 @@ beforeCopy = '';
 liCopy = document.querySelectorAll('.ico_corp')
 
 for(i=0;i<liCopy.length;i++){
-  liCopy[i].parentElement.setAttribute('onclick','copyOn(this);');
   
+    liCopy[i].parentElement.setAttribute('onclick','copyOn(this);');
 }
+
+document.querySelector('.tit_relation').setAttribute('onclick','copyRelation();');
 
 function copyOn(copyA){
   
@@ -169,7 +171,8 @@ function copyOn(copyA){
       ul[i].className = 'list_relation';
     }
   }
-
+  document.querySelector('.relation_list').className='relation_list';
+  
   if(ul[index].className=='list_relation'){
     ul[index].className = 'list_relation relation_on';
  
@@ -183,4 +186,20 @@ function copyOn(copyA){
 
 
 
+copyRelation = () => {
+  ul = document.querySelector('.relation_list')
+  
+  infoCopy = document.querySelectorAll('.info_copyright li ul')
+  for(i=0; i < infoCopy.length; i++){
+ 
+    infoCopy[i].className = 'list_relation';
+  
+  }
 
+
+  if(ul.className=='relation_list'){
+    ul.className='relation_list relation_on'
+  } else {
+    ul.className='relation_list'
+  }
+}

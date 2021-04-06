@@ -51,5 +51,25 @@
         background: white;
     }
 
+    .relation_on{
+        bottom: 90px;
+    }
+
+    .copyright{
+        padding: 10px 30px;
+    }
+    
+    .info_copyright{
+        display: inline-flex;
+    }
+
+    .copyright{
+        font-size: 13px;
+    }
+
+    .copyright li{
+        max-width: 70px;
+    }
+
   
 }

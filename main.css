@@ -88,6 +88,7 @@ a{
     overflow: hidden;
 }
 
+
 video{
     width: 100%;
     display: block;
@@ -137,7 +138,7 @@ video{
 
 
 .last_card img{
-    width: 72%;
+    width: 68%;
     height: auto;
     margin-left: auto;
     display: inline-block;
@@ -491,7 +492,7 @@ video{
 }
 
 .relation_on{
-    display: block;
+    display: block !important;
     width: 160px;
     bottom: 29px;
     left: 0;
@@ -501,17 +502,52 @@ video{
 
 .relation_on li:hover a{
     border-bottom: 1px solid black;
+
+}
+
+.info_copyright li:hover,
+.tit_relation:hover{
+    cursor: pointer;
 }
 
 .info_copyright{
-    display: flex;
+    display: inline-flex;
     position: relative;
 }
 
 
+
 .text_copyright{
+    margin-top: 12px;
+    color: gray;
     display: block;
 }
 
+.relation{
+    position: relative;
+}
 
+.relation_list {
+    display: none;
+    position: absolute;
+    bottom: 29px;
+    left: 0;
 
+}
+
+.relation_list li a{
+    color: gray;
+}
+
+.corp_ico{
+    background: url(https://t1.kakaocdn.net/kakaocorp/pw/ico_corp_181031.png) no-repeat;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top;
+    width: 13px;
+    height: 9px;
+    margin: 9px 0 0 6px;
+    background-position: -272px -25px;
+}
