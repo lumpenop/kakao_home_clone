@@ -117,6 +117,7 @@ video{
 }
 
 .card_body{
+    position: relative;
     background: lightslategray;
     height: 687.25px;
     border-radius: 20px;
@@ -136,16 +137,29 @@ video{
     margin-top: 100px;
 }
 
+.card_body{
+    position: relative;
+}
+
+.a-video{
+    position: absolute;
+    width: 90%;
+    height: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+   
+}
+
 
 .last_card img{
-    width: 68%;
-    height: auto;
-    margin-left: auto;
-    display: inline-block;
-    position: relative;
-    bottom: 8%;
-    left: 100%;
-    transform: translateX(-100%);
+    position: absolute;
+    width: 60%;
+    height: 50%;
+    left: 60%;
+    transform: translateX(-50%);
+    top: 40%;
+   
     z-index: 1;
 }
 
@@ -563,4 +577,8 @@ video{
     border-bottom: 1px solid black;
     height: 30px;
     width: 140px;
+}
+
+.card_list{
+    position: relative;
 }
