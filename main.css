@@ -549,5 +549,18 @@ video{
     width: 13px;
     height: 9px;
     margin: 9px 0 0 6px;
-    background-position: -272px -25px;
+    background-position: -143px -65px;
+    float: right;
+
+}
+
+.tit_relation a{
+    color: gray;
+
+}
+
+.relation{
+    border-bottom: 1px solid black;
+    height: 30px;
+    width: 140px;
 }
