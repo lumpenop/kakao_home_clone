@@ -69,10 +69,12 @@ a{
 
 .main_nav a{
     padding:  0 14px;
-    height: 62px;
-    line-height: 62px;
+    height: 60px;
+    line-height: 60px;
     display: block;
 }
+
+
 
 
 @media screen and (max-height: 500px){
@@ -294,7 +296,7 @@ video{
         height:0px;
     }
     from{
-        height:300px;
+        height:100%;
     }
 }
 
@@ -317,7 +319,7 @@ video{
 }
 
 .gnb_sub li {
-    height: 300px;
+    height: 100%;
 
     border-left: 1px solid #ececec;
     border-right: 1px solid #ececec;

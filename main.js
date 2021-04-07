@@ -65,7 +65,7 @@ navOn = (index) => {
   } 
 
   li = document.querySelectorAll('.main_nav > li');
-  console.log(index)
+  
 
   sub = document.querySelectorAll('.sub_wrap > ul');
   for(i=0; i>sub.length; i++){
@@ -82,7 +82,9 @@ navOn = (index) => {
 
   nav = document.querySelector('.gnb_sub_wrap');
   nav.className = 'gnb_sub_wrap on';
-
+  hov = document.querySelectorAll('.hov');
+  
+  hov[index].style.borderBottom = '1px solid black';
   beforeIndex = index;
 
 }
@@ -97,6 +99,10 @@ navOff = (index) => {
 
   nav = document.querySelector('.gnb_sub_wrap');
   nav.className = 'gnb_sub_wrap off';
+
+  hov = document.querySelectorAll('.hov');
+  
+  hov[index].style.borderBottom = 'none';
 
   beforeIndex = index;
 }
@@ -117,7 +123,7 @@ const io = new IntersectionObserver((entries, observer)=>{
     }
     });},options);
 
-box = document.querySelector('.card_body > div > div > video');
+box = document.querySelector('.card_body >   video');
 io.observe(box);
 
 
